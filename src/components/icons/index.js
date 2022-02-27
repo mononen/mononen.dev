@@ -15,3 +15,4 @@ export { default as IconStar } from './star';
 export { default as IconTwitter } from './twitter';
 export { default as IconPhotos } from './camera';
 export { default as IconBlog } from './blog';
+export { default as IconSphere } from './sphere';

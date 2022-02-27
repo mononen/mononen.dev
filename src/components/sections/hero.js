@@ -93,7 +93,7 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
-      <Background />
+
       {prefersReducedMotion ? (
         <>
           {items.map((item, i) => (
@@ -110,7 +110,7 @@ const Hero = () => {
             ))}
         </TransitionGroup>
       )}
-
+      <Background />
 
     </StyledHeroSection>
   );

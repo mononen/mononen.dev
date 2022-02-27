@@ -13,7 +13,7 @@ COPY . ./
 RUN yarn build
 
 # Use below nginx version
-FROM nginx:1.15.2-alpine as production
+FROM nginx:1.15.2-alpine
 ENV NODE_ENV production
 
 # Copy the build folder of the react app

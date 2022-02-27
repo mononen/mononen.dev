@@ -1,54 +1,137 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import ParticlesBg from 'particles-bg';
+import styled from 'styled-components';
+import { IconSphere } from '@components/icons';
 
-class Background extends Component {
-    constructor() {
-      super();
-      this.state = {
-        name: "React"
-      };
-    }
+import anime from 'animejs';
+
+const StyledSphere = styled.div`
+.animation-wrapper {
+    width: 50%;
+    padding-bottom: 50%;
+  }
   
-    render() {
-      let config = {
-        num: [4, 7],
-        rps: 0.1,
-        radius: [5, 40],
-        life: [1.5, 3],
-        v: [2, 3],
-        tha: [-40, 40],
-        alpha: [0.6, 0],
-        scale: [.1, 0.4],
-        position: "all",
-        color: ["random", "#ff0000"],
-        cross: "dead",
-        // emitter: "follow",
-        random: 15
-      };
+  .sphere-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 580px;
+    height: 580px;
+    margin: -290px 0 0 -290px;
+  }
   
-      if (Math.random() > 0.85) {
-        config = Object.assign(config, {
-          onParticleUpdate: (ctx, particle) => {
-            ctx.beginPath();
-            ctx.rect(
-              particle.p.x,
-              particle.p.y,
-              particle.radius * 2,
-              particle.radius * 2
-            );
-            ctx.fillStyle = particle.color;
-            ctx.fill();
-            ctx.closePath();
-          }
-        });
-      }
+  .sphere path {
+    fill: url(#sphereGradient);
+    stroke-width: 1px;
+    stroke: rgba(80,80,80,.35);
+    backface-visibility: hidden;
+  }
   
-      return (
-        <div>
-          <ParticlesBg type="custom" config={config} bg={true} />
-        </div>
-      );
+  @media (min-width: 500px) {
+    .sphere path {
+      stroke-width: .4px;
     }
   }
-  export default Background;
+`;
+
+const Background = () => {
+
+    function fitElementToParent(el, padding) {
+        var timeout = null;
+        function resize() {
+            if (timeout) clearTimeout(timeout);
+            anime.set(el, { scale: 1 });
+            var pad = padding || 0;
+            var parentEl = el.parentNode;
+            var elOffsetWidth = el.offsetWidth - pad;
+            var parentOffsetWidth = parentEl.offsetWidth;
+            var ratio = parentOffsetWidth / elOffsetWidth;
+            timeout = setTimeout(anime.set(el, { scale: ratio }), 10);
+        }
+        resize();
+        window.addEventListener('resize', resize);
+    }
+
+    
+
+    const animate = () => {
+        var sphereEl = document.querySelector('.sphere-animation');
+        var spherePathEls = sphereEl.querySelectorAll('.sphere path');
+        var pathLength = spherePathEls.length;
+        var hasStarted = false;
+        var aimations = [];
+      
+        fitElementToParent(sphereEl);
+      
+        var breathAnimation = anime({
+          begin: function() {
+            for (var i = 0; i < pathLength; i++) {
+              aimations.push(anime({
+                targets: spherePathEls[i],
+                stroke: {value: ['rgba(255,75,75,1)', 'rgba(80,80,80,.35)'], duration: 500},
+                translateX: [2, -4],
+                translateY: [2, -4],
+                easing: 'easeOutQuad',
+                autoplay: false
+              }));
+            }
+          },
+          update: function(ins) {
+            aimations.forEach(function(animation, i) {
+              var percent = (1 - Math.sin((i * .35) + (.0022 * ins.currentTime))) / 2;
+              animation.seek(animation.duration * percent);
+            });
+          },
+          duration: Infinity,
+          autoplay: false
+        });
+      
+        var introAnimation = anime.timeline({
+          autoplay: false
+        })
+        .add({
+          targets: spherePathEls,
+          strokeDashoffset: {
+            value: [anime.setDashoffset, 0],
+            duration: 3900,
+            easing: 'easeInOutCirc',
+            delay: anime.stagger(190, {direction: 'reverse'})
+          },
+          duration: 2000,
+          delay: anime.stagger(60, {direction: 'reverse'}),
+          easing: 'linear'
+        }, 0);
+      
+        var shadowAnimation = anime({
+            targets: '#sphereGradient',
+            x1: '25%',
+            x2: '25%',
+            y1: '0%',
+            y2: '75%',
+            duration: 30000,
+            easing: 'easeOutQuint',
+            autoplay: false
+          }, 0);
+      
+          introAnimation.play();
+          breathAnimation.play();
+          shadowAnimation.play();
+
+    };
+
+    useEffect(() => {
+        animate();
+    }, []);
+
+    return (
+        <StyledSphere className="loader">
+            <div>
+                <IconSphere />
+            </div>
+        </StyledSphere>
+      );
+}
+
+
+
+export default Background;
