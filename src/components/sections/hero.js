@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
-import ParticlesBg from "particles-bg";
+import Background from '@components/background';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -93,6 +93,7 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
+      <Background />
       {prefersReducedMotion ? (
         <>
           {items.map((item, i) => (
@@ -109,7 +110,7 @@ const Hero = () => {
             ))}
         </TransitionGroup>
       )}
-              <ParticlesBg type="random" bg={true}/>
+
 
     </StyledHeroSection>
   );
