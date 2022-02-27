@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
-import { email } from '@config';
+import { Anim } from '@components';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -108,6 +108,8 @@ const Hero = () => {
             ))}
         </TransitionGroup>
       )}
+      <Anim finishLoading={() => true} />
+
     </StyledHeroSection>
   );
 };
