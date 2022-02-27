@@ -136,18 +136,19 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Alex and I enjoy scalable software that interacts with the internet. My
-              interest in computer programming started way back in 2014 when I built my first computer - 
-              turns out that getting your hands dirty and your feet wet is the fastest way to get interested in something.
+              Hello! My name is Alex and I enjoy scalable software that interacts with the internet.
+              My interest in computer programming started way back in 2014 when I built my first
+              computer - turns out that getting your hands dirty and your feet wet is the fastest
+              way to get interested in something.
             </p>
 
             <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://tech.rochester.edu/">my university's IT department</a>,{' '}
-              and it's machine shop, working on designing and manufacturing parts for some of my personal projects.
-              My main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              <a href="https://tech.rochester.edu/">my university's IT department</a>, and it's
+              machine shop, working on designing and manufacturing parts for some of my personal
+              projects. My main focus these days is building accessible, inclusive products and
+              digital experiences at <a href="https://upstatement.com/">Upstatement</a> for a
+              variety of clients.
             </p>
 
             <p>

@@ -88,12 +88,15 @@ const Hero = () => {
         Some of my photos!
       </a></>
   );
+  const bkgrnd = (
+    <Background />
+  )
 
-  const items = [one, two, three, four, five];
+  const items = [ one, two, three, four, five];
 
   return (
     <StyledHeroSection>
-
+      <Background />
       {prefersReducedMotion ? (
         <>
           {items.map((item, i) => (
@@ -110,7 +113,6 @@ const Hero = () => {
             ))}
         </TransitionGroup>
       )}
-      <Background />
 
     </StyledHeroSection>
   );

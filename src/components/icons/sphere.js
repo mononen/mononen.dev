@@ -2,7 +2,7 @@ import React from 'react';
 
 const IconSphere = () => (
     <div class="sphere-animation">
-        <svg class="sphere" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" stroke="rgba(80,80,80,.35)">
+        <svg class="sphere" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" stroke="rgba(80,80,80,.35)">
             <defs>
                 <linearGradient id="sphereGradient" x1="5%" x2="5%" y1="0%" y2="15%">
                     <stop stop-color="#373734" offset="0%" />
