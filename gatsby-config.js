@@ -6,8 +6,8 @@ module.exports = {
     description:
       'Alex Mononen is a software engineer specializing in building efficient, fast and highly scalable applications.',
     siteUrl: 'https://mononen.dev', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder,
-    twitterUsername: '@bchiang7',
+    image: '/splash.png', // Path to your image you placed in the 'static' folder,
+    twitterUsername: '@anmonono',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

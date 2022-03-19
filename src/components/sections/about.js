@@ -126,7 +126,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Docker', 'Node.js', 'Go'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React',
+    'Docker',
+    'Node.js',
+    'Go',
+    'C',
+    'C++',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -146,18 +155,17 @@ const About = () => {
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://tech.rochester.edu/">my university's IT department</a>, and it's
               machine shop, working on designing and manufacturing parts for some of my personal
-              projects. My main focus these days is building accessible, inclusive products and
-              digital experiences at <a href="https://upstatement.com/">Upstatement</a> for a
-              variety of clients.
+              projects. My main focus these days is building lightweight ski registration systems at{' '}
+              <a href="https://admininternet.net/" target="_blank" rel="noreferrer">
+                AdminInternet
+              </a>{' '}
+              and completing my degree in computer science.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              I also recently <a href="https://github.com/lolwheel/Owie">'hacked' some Onewheels</a>{' '}
+              that removes the pairing between the controller and the battery management system and
+              allows the use of extended batteries.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>
@@ -172,7 +180,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

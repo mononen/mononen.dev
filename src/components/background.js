@@ -89,7 +89,8 @@ const Background = () => {
           aimations.push(
             anime({
               targets: spherePathEls[i],
-              stroke: { value: ['rgba(255,75,75,1)', 'rgba(80,80,80,.35)'], duration: 500 },
+              // green and light grey stroke
+              stroke: { value: ['#64ffda', 'rgba(80,80,80,.35)'], duration: 500 },
               translateX: [2, -4],
               translateY: [2, -4],
               easing: 'easeOutQuad',
@@ -143,8 +144,8 @@ const Background = () => {
     );
 
     introAnimation.play();
-    breathAnimation.play();
     shadowAnimation.play();
+    breathAnimation.play();
   };
 
   useEffect(() => {

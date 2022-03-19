@@ -61,38 +61,40 @@ const Hero = () => {
 
   const one = <h1>Howdy, my name is</h1>;
   const two = <h2 className="big-heading">Alex Mononen.</h2>;
-  const three = <h3 className="big-heading">I <del>hack</del> reverse engineer stuff.</h3>;
+  const three = (
+    <h3 className="big-heading">
+      I <del>hack</del> reverse engineer stuff.
+    </h3>
+  );
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building efficient, fast and highly scalable applications.
-        Currently, I’m focused on building lightweight ski registration systems
-        at{' '}
+        I’m a software engineer specializing in building efficient, fast and highly scalable
+        applications. Currently, I’m focused on building lightweight ski registration systems at{' '}
         <a href="https://admininternet.net/" target="_blank" rel="noreferrer">
           AdminInternet
-        </a>,
-        completing my degree in computer science, hacking Onewheels or taking photos.
+        </a>
+        , completing my degree in computer science, hacking Onewheels or taking photos.
       </p>
     </>
   );
   const five = (
-    <><a
-      className="email-link"
-      href="/#projects">
-      Things I've built!
-    </a>   <a
-      className="email-link"
-      href="https://photography.mononen.dev/"
-      target="_blank"
-      rel="noreferrer">
+    <>
+      <a className="email-link" href="/#projects">
+        Things I've built!
+      </a>{' '}
+      <a
+        className="email-link"
+        href="https://photography.mononen.dev/"
+        target="_blank"
+        rel="noreferrer">
         Some of my photos!
-      </a></>
+      </a>
+    </>
   );
-  const bkgrnd = (
-    <Background />
-  )
+  const bkgrnd = <Background />;
 
-  const items = [ one, two, three, four, five];
+  const items = [one, two, three, four, five];
 
   return (
     <StyledHeroSection>
@@ -108,12 +110,11 @@ const Hero = () => {
           {isMounted &&
             items.map((item, i) => (
               <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${1.5 * i + 1}00ms` }}>{item}</div>
+                <div style={{ transitionDelay: `${i + 3}00ms` }}>{item}</div>
               </CSSTransition>
             ))}
         </TransitionGroup>
       )}
-
     </StyledHeroSection>
   );
 };
