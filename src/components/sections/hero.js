@@ -69,12 +69,12 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building efficient, fast and highly scalable
-        applications. Currently, I’m focused on building lightweight ski registration systems at{' '}
-        <a href="https://admininternet.net/" target="_blank" rel="noreferrer">
-          AdminInternet
+        I’m a software engineer specializing in devops. Currently, I’m focused on building the
+        latest and greatest learning management systems at{' '}
+        <a href="https://www.mosaiclearning.com/" target="_blank" rel="noreferrer">
+          Mosaic Learning
         </a>
-        , completing my degree in computer science, hacking Onewheels or taking photos.
+        , hacking Onewheels or taking photos.
       </p>
     </>
   );
@@ -87,12 +87,12 @@ const Hero = () => {
         className="email-link"
         href="https://photography.mononen.dev/"
         target="_blank"
-        rel="noreferrer">
+        rel="noreferrer"
+      >
         Some of my photos!
       </a>
     </>
   );
-  const bkgrnd = <Background />;
 
   const items = [one, two, three, four, five];
 

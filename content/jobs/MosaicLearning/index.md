@@ -1,10 +1,10 @@
 ---
-date: '2021-01-14'
-title: 'Devops & Backend Engineer'
-company: 'AdminInternet'
+date: '2021-06-01'
+title: 'DevOps Engineer'
+company: 'Mosaic Learning'
 location: 'Remote'
-range: 'January 2021 - June 2022'
-url: 'https://www.admininternet.net/'
+range: 'June 2022 - Present'
+url: 'https://www.mosaiclearning.com/'
 ---
 
 - Overseeing continuous integration and deployment of sites to a staging server while keeping databases synchronized, allowing developers to test configurations

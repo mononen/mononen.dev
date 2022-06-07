@@ -8,6 +8,6 @@ range: 'August 2019 - Present'
 url: 'https://www.tech.rochester.edu/'
 ---
 
-- Developed and maintained code for in-house and client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery
-- Manually tested sites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness
-- Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more
+- Taught basic machine shop safety protocols and policies to 150+ students, resulting in no injury that a band-aid couldn't solve
+- Oversaw and advised all student’s course projects
+- Led a team of other students for consistent shop and machine maintenance, resulting in a 12% less downtime
