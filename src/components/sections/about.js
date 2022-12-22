@@ -126,16 +126,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = [
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'React',
-    'Docker',
-    'Node.js',
-    'Go',
-    'C',
-    'C++',
-  ];
+  const skills = ['Docker', 'Go', 'Kubernetes', 'Helm', 'Terraform', 'Jenkins'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -145,7 +136,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Alex and I enjoy scalable software that interacts with the internet.
+              Howdy! My name is Alex and I enjoy scalable software that interacts with the internet.
               My interest in computer programming started way back in 2014 when I built my first
               computer - turns out that getting your hands dirty and your feet wet is the fastest
               way to get interested in something.
@@ -155,11 +146,13 @@ const About = () => {
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://tech.rochester.edu/">my university's IT department</a>, and it's
               machine shop, working on designing and manufacturing parts for some of my personal
-              projects. My main focus these days is building lightweight ski registration systems at{' '}
-              <a href="https://admininternet.net/" target="_blank" rel="noreferrer">
-                AdminInternet
+              projects. My main focus these days is designing and implementing effective and robust
+              CI/CD procedures and automation to allow for rapid development and delivery of
+              software at{' '}
+              <a href="https://mosaiclearning.com/" target="_blank" rel="noreferrer">
+                Mosaic Learning
               </a>{' '}
-              and completing my degree in computer science.
+              .
             </p>
 
             <p>
